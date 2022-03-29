@@ -1,0 +1,19 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coord-input {
+  display: flex;
+  gap: 1rem;
+}
+
+.lat {
+  margin-left: 0.6rem;
+}
+
+.coord-input > input {
+  width: var(--input-width-sm);
+}
