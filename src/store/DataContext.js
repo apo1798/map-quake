@@ -37,6 +37,8 @@ export const DataContext = React.createContext({
   setMag: () => {},
   isLoading: false,
   setIsLoading: (boolean) => {},
+  httpError: 'string',
+  setHttpError: () => {},
 });
 
 const DataContextProvider = (props) => {
@@ -46,7 +48,7 @@ const DataContextProvider = (props) => {
   const [coordsLng, setCoordsLng] = useState(0);
   const [mag, setMag] = useState(3);
   const [isLoading, setIsLoading] = useState(false);
-  // const [errorMessage]
+  const [httpError, setHttpError] = useState(null);
 
   const [earthquakeArray, setEarthquakeArray] = useState([]);
 
@@ -67,6 +69,8 @@ const DataContextProvider = (props) => {
         setMag,
         isLoading,
         setIsLoading,
+        httpError,
+        setHttpError,
       }}
     >
       {props.children}

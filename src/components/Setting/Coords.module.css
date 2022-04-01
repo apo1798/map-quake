@@ -11,9 +11,10 @@
 .coord-input {
   display: flex;
   gap: 1rem;
-  font-size: 1.6rem;
+  font-size: inherit;
   align-items: center;
   font-size: var(--setting-content-font-size);
+  font-size: 1.8rem;
 }
 
 /* 為了跟下行對稱 */
@@ -23,4 +24,23 @@
 
 .coord-input > input {
   width: var(--input-width-md);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 39em) {
+  .lat {
+    margin-left: 0.4rem;
+  }
+}
+@media (max-width: 27em) {
+  .coord-input {
+    gap: 0rem;
+    font-size: 1.4rem;
+  }
+  .coord-input {
+    gap: 0.5rem;
+  }
+  .coord-input > input {
+    width: 55%;
+  }
 }

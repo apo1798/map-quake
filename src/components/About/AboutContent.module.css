@@ -1,0 +1,56 @@
+.text-container {
+  margin: auto;
+  padding: 8rem 4rem;
+  font-size: 2rem;
+  width: fit-content;
+  height: inherit;
+}
+
+.list {
+  margin-bottom: 2.4rem;
+}
+
+.list > h2 {
+  color: gold;
+}
+
+.list > li {
+  margin-bottom: 1.2rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: rgb(88, 172, 255);
+  transition: all 0.5s;
+}
+
+.link:hover,
+.link:active {
+  color: #fa8e00;
+  transform: translateY(-0.5px);
+}
+
+@media (max-width: 54em) {
+  .text-container {
+    padding: 4rem 4rem;
+  }
+}
+
+@media (max-width: 39em) {
+  .text-container {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 27em) {
+  .text-container {
+    padding: 4rem 3rem;
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 27em) and (max-height: 43em) {
+  .text-container {
+    padding: 4rem 3rem;
+    font-size: 1.6rem;
+  }
+}

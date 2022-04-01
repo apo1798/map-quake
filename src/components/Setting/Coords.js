@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import { ReactComponent as LocationPin } from '../../icons/locationPin.svg';
+
 import { ReactComponent as PersonWalking } from '../../icons/personWalking.svg';
 import { DataContext } from '../../store/DataContext';
 
@@ -10,19 +10,17 @@ const Coords = () => {
     useContext(DataContext);
 
   const latChangeHandler = (event) => {
-    if (+event.target.value > 90) return;
-    if (+event.target.value < -90) return;
-    // TODO ERROR MODAL
+    if (+event.target.value > 90 || +event.target.value < -90) return;
     setCoordsLat(event.target.value);
   };
   const lngChangeHandler = (event) => {
+    if (+event.target.value > 180 || +event.target.value < -180) return;
     setCoordsLng(event.target.value);
   };
 
   return (
     <>
       <div className={styles.title}>
-        {/* <LocationPin />  */}
         <PersonWalking />
         <label htmlFor='lat'>移動到</label>
       </div>

@@ -37,6 +37,7 @@ code {
   --main-text-color: #fdfdfd;
   --setting-title-font-size: 2.2rem;
   --setting-content-font-size: 1.8rem;
+  --setting-content-color: #fdfdfd;
 }
 
 #root {
@@ -51,8 +52,13 @@ ul {
   padding: 0;
 }
 
-a {
-  color: gold;
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -68,4 +74,14 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 39rem) {
+  :root {
+    --setting-title-font-size: 1.8rem;
+  }
+
+  .leaflet-container {
+    height: 45vh;
+  }
 }

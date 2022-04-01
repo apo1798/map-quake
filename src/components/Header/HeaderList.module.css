@@ -1,0 +1,38 @@
+.header-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+.link:link,
+.link:visited {
+  font-size: 1.6rem;
+  display: inline-block;
+  color: black;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #fa8e00;
+  transform: scale(1.02);
+}
+
+@media (max-width: 39em) {
+  .header-list {
+    gap: 1rem;
+  }
+}
+
+/* 432px */
+@media (max-width: 27em) {
+  .header-list {
+    gap: 0.5rem;
+  }
+
+  .link:link,
+  .link:visited {
+    font-size: 1.5rem;
+  }
+}

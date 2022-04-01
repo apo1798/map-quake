@@ -25,3 +25,16 @@
   color: rgb(255, 96, 68);
   font-size: 1.6rem;
 }
+
+@media (max-width: 39em) {
+  .error {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 27em) {
+  .date-input {
+    font-size: 1.6rem;
+    gap: 0.5rem;
+  }
+}

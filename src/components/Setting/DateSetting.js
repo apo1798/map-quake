@@ -8,7 +8,7 @@ const dateValidChecker = (toDate, fromDate) => {
   const timeGap = new Date(toDate) - new Date(fromDate);
   if (timeGap === 0) return '日期至少要相差一天';
   if (timeGap < 0) return '起始日期需早於截止日期';
-  return false;
+  return null;
 };
 
 const today = new Date().toISOString().split('T')[0];
@@ -24,7 +24,6 @@ const DateSetting = () => {
 
   const fromDateHandler = (event) => {
     setFromDate(event.target.value);
-    console.log(toDate);
   };
   const toDateHandler = (event) => {
     setToDate(event.target.value);

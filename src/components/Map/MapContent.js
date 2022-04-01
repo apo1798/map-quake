@@ -19,10 +19,10 @@ const MapContent = (props) => {
 
   return (
     <MapContainer
-      // center={{ lat: props.userLat, lng: props.userLng }}
-      // zoom={8}
       worldCopyJump={true}
       placeholder={<p>World map marked with earthquake popup.</p>}
+      tap={false}
+      // tap to fix popup cann't be shown in safari
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

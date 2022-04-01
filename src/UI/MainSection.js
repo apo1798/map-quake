@@ -1,11 +1,12 @@
 import React from 'react';
 
 import Map from '../components/Map/Map';
-import Settings from '../components/side-options/Settings';
+import Settings from '../components/Setting/Settings';
+import Info from '../components/Info/Info';
 
 import { EarthquakeHttp } from '../http-request/EarthquakeHttp';
 
-import styles from './Layout.module.css';
+import styles from './MainSection.module.css';
 
 const MainSection = () => {
   EarthquakeHttp();
@@ -18,7 +19,7 @@ const MainSection = () => {
         </div>
         <section className={styles['options-container']}>
           <Settings></Settings>
-          <div>asd</div>
+          <Info />
         </section>
       </section>
     </>

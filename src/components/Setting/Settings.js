@@ -12,7 +12,7 @@ const Settings = () => {
   const { isLoading } = useContext(DataContext);
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.header}>
         <span>設定</span>
         <span className={styles['header-loading']}>
@@ -31,7 +31,7 @@ const Settings = () => {
           <MagSetting />
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

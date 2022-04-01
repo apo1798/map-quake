@@ -21,7 +21,7 @@ const MapCenter = ({ center, zoom = 6 }) => {
   return (
     <Marker position={{ lat: center.lat, lng: center.lng }} icon={myIcon}>
       <Popup>
-        你現在移動到這！
+        你現在移動到
         <br />
         {`${(+center.lat).toFixed(2)}, ${(+center.lng).toFixed(2)}`}
       </Popup>

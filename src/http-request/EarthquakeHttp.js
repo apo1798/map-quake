@@ -22,8 +22,14 @@ const featureProcessor = (feature) => {
 };
 
 export const EarthquakeHttp = () => {
-  const { fromDate, toDate, setEarthquakeArray, mag, setIsLoading } =
-    useContext(DataContext);
+  const {
+    fromDate,
+    toDate,
+    setEarthquakeArray,
+    mag,
+    setIsLoading,
+    setHttpError,
+  } = useContext(DataContext);
 
   useEffect(() => {
     setIsLoading(true);
@@ -43,12 +49,16 @@ export const EarthquakeHttp = () => {
         );
         setEarthquakeArray(earthquakeArray);
         setIsLoading(false);
+        setHttpError(null);
       })
       .catch((error) => {
         setIsLoading(false);
+        setHttpError(
+          '伺服器回應錯誤。通常是資料數量過多。試著減少時間軸度、亦或增加震度再試一次。'
+        );
         console.error(error.message);
       });
-  }, [fromDate, toDate, setEarthquakeArray, setIsLoading, mag]);
+  }, [fromDate, toDate, setEarthquakeArray, setIsLoading, mag, setHttpError]);
 };
 
 // export default EarthquakeHttp;

@@ -1,16 +1,22 @@
 import React from 'react';
-import Header from './components/headers/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import About from './Pages/About';
+import ErrorPage from './Pages/ErrorPage';
+import Index from './Pages/Index';
 
 import DataContextProvider from './store/DataContext';
 
-import MainSection from './UI/MainSection';
-
 const App = () => {
   return (
-    <DataContextProvider>
-      <Header />
-      <MainSection />
-    </DataContextProvider>
+    <BrowserRouter>
+      <DataContextProvider>
+        <Routes>
+          <Route path='/' element={<Index />} />
+          <Route path='/about' element={<About />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </DataContextProvider>
+    </BrowserRouter>
   );
 };
 
