@@ -11,9 +11,9 @@ const App = () => {
     <BrowserRouter>
       <DataContextProvider>
         <Routes>
-          <Route path='/' element={<Index />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<ErrorPage />} />
+          <Route path='/map-quake/' element={<Index />} />
+          <Route path='/map-quake/about' element={<About />} />
+          <Route path='/map-quake/*' element={<ErrorPage />} />
         </Routes>
       </DataContextProvider>
     </BrowserRouter>
