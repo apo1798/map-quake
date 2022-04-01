@@ -23,18 +23,32 @@ const getDate = (lastMonth = false) => {
 
 // Create a context
 export const DataContext = React.createContext({
-  // earthquakeData: [],
+  earthquakeArray: [],
+  setEarthquakeArray: (dataArray) => {},
   fromDate: 'dateString',
   toDate: 'dateString',
   setToDate: (dateString) => {},
   setFromDate: (dateString) => {},
+  coordsLat: 0,
+  coordsLng: 0,
+  setCoordsLat: () => {},
+  setCoordsLng: () => {},
+  mag: 0,
+  setMag: () => {},
+  isLoading: false,
+  setIsLoading: (boolean) => {},
 });
 
 const DataContextProvider = (props) => {
   const [fromDate, setFromDate] = useState(getDate(true));
   const [toDate, setToDate] = useState(getDate());
-  const [lat, setLat] = useState('');
-  const [lng, setLng] = useState('');
+  const [coordsLat, setCoordsLat] = useState(0);
+  const [coordsLng, setCoordsLng] = useState(0);
+  const [mag, setMag] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
+  // const [errorMessage]
+
+  const [earthquakeArray, setEarthquakeArray] = useState([]);
 
   return (
     <DataContext.Provider
@@ -43,10 +57,16 @@ const DataContextProvider = (props) => {
         setFromDate,
         toDate,
         setToDate,
-        lat,
-        setLat,
-        lng,
-        setLng,
+        earthquakeArray,
+        setEarthquakeArray,
+        coordsLat,
+        coordsLng,
+        setCoordsLat,
+        setCoordsLng,
+        mag,
+        setMag,
+        isLoading,
+        setIsLoading,
       }}
     >
       {props.children}

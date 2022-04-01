@@ -24,6 +24,7 @@ const DateSetting = () => {
 
   const fromDateHandler = (event) => {
     setFromDate(event.target.value);
+    console.log(toDate);
   };
   const toDateHandler = (event) => {
     setToDate(event.target.value);
@@ -35,7 +36,7 @@ const DateSetting = () => {
     <>
       <div className={styles.title}>
         <Calendar />
-        <label htmlFor='from-date'>時間</label>
+        <label htmlFor='from-date'>UTC時間</label>
       </div>
       <div className={styles['date-input']}>
         <label htmlFor='from-date'>從</label>
@@ -44,6 +45,7 @@ const DateSetting = () => {
           onChange={fromDateHandler}
           value={fromDate}
           id='from-date'
+          min='1980-01-01'
           max={toDate}
         />
       </div>

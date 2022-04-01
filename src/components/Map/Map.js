@@ -1,49 +1,42 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { DataContext } from '../../store/DataContext';
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import MapLoading from './MapLoading';
+import MapContent from './MapContent';
 
-import styles from './Map.module.css'
-import CircleNotch from '../../UI/CircleNotch';
-
+// import styles from './Map.module.css';
 
 const Map = () => {
-  const { lat, setLat, lng, setLng } = useContext(DataContext);
+  const [userLat, setUserLat] = useState('');
+  const [userLng, setUserLng] = useState('');
+  const { setCoordsLat, setCoordsLng } = useContext(DataContext);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-        setLat(latitude);
-        setLng(longitude);
-      },
-      () => {
-        alert("系統自動定位在(25°N, 121°50'E)");
-        setLat(25);
-        setLng(121.5);
-      }
-    );
-  }, [setLat, setLng]);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const lat = pos.coords.latitude.toFixed(4);
+          const lng = pos.coords.longitude.toFixed(4);
+          setUserLat(+lat);
+          setUserLng(+lng);
+          setCoordsLat(+lat);
+          setCoordsLng(+lng);
+        },
+        () => {
+          alert("系統自動定位在(25°N, 121°50'E)");
+          setUserLat(25);
+          setUserLng(121.5);
+          setCoordsLat(25);
+          setCoordsLng(121.5);
+        }
+      );
+    }
+  }, [setCoordsLat, setCoordsLng]);
 
   return (
     <>
-      {!lat && !lng && (
-        <>
-          <CircleNotch />
-          <p className={styles['loading-text']}>地圖載入中......</p>
-        </>
-      )}
-      {lat && lng && (
-        <MapContainer center={{ lat: lat, lng: lng }} zoom={13}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
-          />
-          <Marker position={{ lat: lat, lng: lng }}>
-            <Popup>你現在的位置</Popup>
-          </Marker>
-        </MapContainer>
-      )}
+      {!userLat && !userLng && <MapLoading />}
+      {userLat && userLng && <MapContent userLat={userLat} userLng={userLng} />}
     </>
   );
 };

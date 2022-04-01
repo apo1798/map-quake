@@ -3,17 +3,24 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  color: #4cd94c;
+  margin-bottom: 0.5rem;
+  font-size: var(--setting-title-font-size);
 }
 
 .coord-input {
   display: flex;
   gap: 1rem;
+  font-size: 1.6rem;
+  align-items: center;
+  font-size: var(--setting-content-font-size);
 }
 
+/* 為了跟下行對稱 */
 .lat {
-  margin-left: 0.6rem;
+  margin-left: 0.5rem;
 }
 
 .coord-input > input {
-  width: var(--input-width-sm);
+  width: var(--input-width-md);
 }

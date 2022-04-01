@@ -8,7 +8,7 @@
   font-size: var(--setting-title-font-size);
 }
 
-.date-input {
+.mag-input {
   display: flex;
   gap: 1rem;
   font-size: 1.6rem;
@@ -16,12 +16,6 @@
   font-size: var(--setting-content-font-size);
 }
 
-.date-input input {
-  width: var(--input-width);
-}
-
-.error {
-  margin: 0;
-  color: rgb(255, 96, 68);
-  font-size: 1.6rem;
+.mag-input select {
+  width: var(--input-width-sm);
 }

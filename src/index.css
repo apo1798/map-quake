@@ -32,8 +32,11 @@ code {
 :root {
   --main-container: 90vh;
   --input-width: 13rem;
-  --input-width-sm: 10rem;
+  --input-width-md: 10rem;
+  --input-width-sm: 4rem;
   --main-text-color: #fdfdfd;
+  --setting-title-font-size: 2.2rem;
+  --setting-content-font-size: 1.8rem;
 }
 
 #root {
