@@ -8,12 +8,12 @@ const HeaderList = () => {
     <div>
       <ul className={styles['header-list']}>
         <li>
-          <Link to='/' className={styles.link}>
+          <Link to='/map-quake/' className={styles.link}>
             地圖首頁
           </Link>
         </li>
         <li>
-          <Link to='/about' className={styles.link}>
+          <Link to='/map-quake/about' className={styles.link}>
             介紹
           </Link>
         </li>

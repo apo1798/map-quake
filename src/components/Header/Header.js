@@ -8,7 +8,7 @@ import { MapTrifold } from 'phosphor-react';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link className={styles['header-link']} to='/'>
+      <Link className={styles['header-link']} to='/map-quake/'>
         <MapTrifold size={32} />
         <h1>MapQuake 地震地圖</h1>
       </Link>
