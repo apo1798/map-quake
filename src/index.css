@@ -76,12 +76,12 @@ h6 {
   padding: 0;
 }
 
-@media (max-width: 39rem) {
+@media (max-width: 39em) {
   :root {
     --setting-title-font-size: 1.8rem;
   }
 
   .leaflet-container {
-    height: 45vh;
+    height: 50vh;
   }
 }

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import { ReactComponent as PersonWalking } from '../../icons/personWalking.svg';
 import { DataContext } from '../../store/DataContext';
 
 import styles from './Coords.module.css';
+import { PersonSimpleWalk } from 'phosphor-react';
 
 const Coords = () => {
   const { coordsLat, coordsLng, setCoordsLat, setCoordsLng } =
@@ -21,7 +21,7 @@ const Coords = () => {
   return (
     <>
       <div className={styles.title}>
-        <PersonWalking />
+        <PersonSimpleWalk />
         <label htmlFor='lat'>移動到</label>
       </div>
       <div className={styles['coord-input']}>

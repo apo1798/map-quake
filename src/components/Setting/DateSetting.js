@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { DataContext } from '../../store/DataContext';
-import { ReactComponent as Calendar } from '../../icons/calendar.svg';
+// import { ReactComponent as Calendar } from '../../icons/calendar.svg';
+
+import { Calendar } from 'phosphor-react';
 
 import styles from './DateSetting.module.css';
 
@@ -10,17 +12,10 @@ const dateValidChecker = (toDate, fromDate) => {
   if (timeGap < 0) return '起始日期需早於截止日期';
   return null;
 };
-
 const today = new Date().toISOString().split('T')[0];
 
 const DateSetting = () => {
   const { toDate, setToDate, fromDate, setFromDate } = useContext(DataContext);
-
-  // useEffect(() => {
-  //   console.log(fromDate, toDate);
-
-  //   // TODO HTTP REQUEST
-  // }, [fromDate, toDate]);
 
   const fromDateHandler = (event) => {
     setFromDate(event.target.value);

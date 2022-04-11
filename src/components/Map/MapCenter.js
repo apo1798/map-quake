@@ -1,5 +1,4 @@
 import { useMap, Popup, Marker } from 'react-leaflet';
-// import { ReactComponent as PersonWalking } from '../../icons/personWalking.svg';
 
 const L = require('leaflet');
 

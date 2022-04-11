@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { DataContext } from '../../store/DataContext';
 
-import { ReactComponent as Robot } from '../../icons/robot.svg';
+// import { ReactComponent as Robot } from '../../icons/robot.svg';
 import styles from './Info.module.css';
+import { Robot } from 'phosphor-react';
 
 const Info = () => {
   const { earthquakeArray, httpError } = useContext(DataContext);
@@ -29,10 +30,9 @@ const Info = () => {
         greaterThanSix: magCounter.greaterThanSix + 1,
       };
     else {
-      console.log(earthquake);
+      console.log('震度計畫錯誤。');
     }
   });
-  console.log(magCounter);
 
   return (
     <section className={styles['info-container']}>
@@ -40,7 +40,7 @@ const Info = () => {
         <Robot />
         <span>系統小幫手</span>
       </div>
-      <ul>
+      <ul className={styles.list}>
         <li>共有：{earthquakeCount}筆資料</li>
         <li>
           震度{'<'}4：{magCounter.threeToFour}

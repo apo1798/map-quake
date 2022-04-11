@@ -42,13 +42,13 @@
     font-size: 1.8rem;
   }
 }
-@media (max-width: 27em) {
+@media (max-width: 30em) {
   .text-container {
     padding: 4rem 3rem;
     font-size: 1.8rem;
   }
 }
-@media (max-width: 27em) and (max-height: 43em) {
+@media (max-width: 30em) and (max-height: 43em) {
   .text-container {
     padding: 4rem 3rem;
     font-size: 1.6rem;

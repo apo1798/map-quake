@@ -43,7 +43,6 @@ const markerZIndexMatcher = (mag) => {
 };
 
 const MapEarthquakeMarkers = (props) => {
-  console.log(props.earthquakeArray);
   return (
     <>
       {props.earthquakeArray.map((data) => {

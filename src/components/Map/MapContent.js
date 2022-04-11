@@ -22,19 +22,14 @@ const MapContent = (props) => {
       worldCopyJump={true}
       placeholder={<p>World map marked with earthquake popup.</p>}
       tap={false}
-      // tap to fix popup cann't be shown in safari
+      // tap to fix popup cann't be shown in Safari
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        // url='https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-
       <MapUserCoordsMarker userLat={props.userLat} userLng={props.userLng} />
-
       <MapEarthquakeMarkers earthquakeArray={earthquakeArray} />
-      {/* <SetBoundsRectangles /> */}
-      {/* <LocationMarker /> */}
       <MapCenter center={{ lat: coordsLat, lng: coordsLng }} />
     </MapContainer>
   );

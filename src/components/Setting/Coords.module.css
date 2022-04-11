@@ -8,6 +8,10 @@
   font-size: var(--setting-title-font-size);
 }
 
+.title > svg {
+  color: var(--main-text-color);
+}
+
 .coord-input {
   display: flex;
   gap: 1rem;
@@ -29,18 +33,13 @@
 
 @media (max-width: 39em) {
   .lat {
+    /* 為了跟下行對稱 */
     margin-left: 0.4rem;
   }
 }
-@media (max-width: 27em) {
+@media (max-width: 30em) {
   .coord-input {
     gap: 0rem;
     font-size: 1.4rem;
-  }
-  .coord-input {
-    gap: 0.5rem;
-  }
-  .coord-input > input {
-    width: 55%;
   }
 }

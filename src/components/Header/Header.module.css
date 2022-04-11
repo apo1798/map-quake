@@ -46,7 +46,7 @@
   }
 }
 
-@media (max-width: 27em) {
+@media (max-width: 30em) {
   .header-link > h1 {
     font-size: 1.7rem;
   }

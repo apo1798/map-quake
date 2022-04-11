@@ -13,7 +13,7 @@ const MainSection = () => {
 
   return (
     <>
-      <section className={styles['main-container']}>
+      <main className={styles['main-container']}>
         <div className={styles['map-container']}>
           <Map />
         </div>
@@ -21,7 +21,7 @@ const MainSection = () => {
           <Settings></Settings>
           <Info />
         </section>
-      </section>
+      </main>
     </>
   );
 };

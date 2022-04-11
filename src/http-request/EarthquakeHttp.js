@@ -56,7 +56,6 @@ export const EarthquakeHttp = () => {
         setHttpError(
           '伺服器回應錯誤。通常是資料數量過多。試著減少時間軸度、亦或增加震度再試一次。'
         );
-        console.error(error.message);
       });
   }, [fromDate, toDate, setEarthquakeArray, setIsLoading, mag, setHttpError]);
 };

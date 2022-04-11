@@ -1,14 +1,14 @@
 import React from 'react';
-import { ReactComponent as Notch } from '../icons/circleNotch.svg';
 
 import styles from './CircleNotch.module.css';
+import { CircleNotch } from 'phosphor-react';
 
-const CircleNotch = () => {
+const LoadingCircleNotch = () => {
   return (
     <>
-      <Notch className={styles['loadingNotch']} />
+      <CircleNotch className={styles['loadingNotch']} />
     </>
   );
 };
 
-export default CircleNotch;
+export default LoadingCircleNotch;

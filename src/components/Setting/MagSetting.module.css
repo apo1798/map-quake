@@ -8,6 +8,10 @@
   font-size: var(--setting-title-font-size);
 }
 
+.title > svg {
+  color: var(--main-text-color);
+}
+
 .mag-input {
   display: flex;
   gap: 1rem;
