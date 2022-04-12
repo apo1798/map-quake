@@ -1,15 +1,14 @@
 {
   "files": {
     "main.css": "/map-quake/static/css/main.4c50b505.css",
-    "main.js": "/map-quake/static/js/main.b1d30af2.js",
-    "static/media/og_image.png": "/map-quake/static/media/og_image.2d890e3bbeabce886e07.png",
+    "main.js": "/map-quake/static/js/main.087b010e.js",
     "static/media/person-simple-walk.png": "/map-quake/static/media/person-simple-walk.81f39d3100a500b3cd32.png",
     "index.html": "/map-quake/index.html",
     "main.4c50b505.css.map": "/map-quake/static/css/main.4c50b505.css.map",
-    "main.b1d30af2.js.map": "/map-quake/static/js/main.b1d30af2.js.map"
+    "main.087b010e.js.map": "/map-quake/static/js/main.087b010e.js.map"
   },
   "entrypoints": [
     "static/css/main.4c50b505.css",
-    "static/js/main.b1d30af2.js"
+    "static/js/main.087b010e.js"
   ]
 }
