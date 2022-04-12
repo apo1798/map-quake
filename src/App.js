@@ -17,13 +17,6 @@ const App = () => {
         />
         <meta name='theme-color' content='#4d4d4d' />
         <meta name='keywords' content='地震、地圖、圖像化' />
-        <meta property='og:title' content='MapQuake 地震地圖' />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content='/map-quake/og_image.png' />
-        <meta
-          property='og:url'
-          content='https://apo1798.github.io/map-quake/'
-        />
       </Helmet>
       {/*  */}
       <BrowserRouter>

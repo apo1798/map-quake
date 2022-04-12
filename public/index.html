@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon32.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#4d4d4d" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!-- Leaflet CSS -->
     <link
@@ -13,10 +12,15 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
-
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-    <title>MapQuake 地震地圖</title>
+    <meta property="og:title" content="MapQuake 地震地圖" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/og_image.png" />
+    <meta
+      property="og:description"
+      content="地震地圖。結合地震API和Leaflet、OpenStreet Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。"
+    />
+    <meta property="og:url" content="https://apo1798.github.io/map-quake/" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -1,6 +1,6 @@
 .main-container {
   height: var(--main-container);
-  max-width: 114rem;
+  max-width: 120rem;
   margin: auto;
 
   background-color: rgb(77, 77, 77);

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-// import { ReactComponent as Robot } from '../../icons/robot.svg';
 import styles from './Info.module.css';
 import { Robot } from 'phosphor-react';
 

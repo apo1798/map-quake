@@ -63,6 +63,12 @@ const AboutContent = () => {
           </div>
         </li>
       </ul>
+      <ul className={styles.list}>
+        <h2>原由</h2>
+        <li>
+          被台灣時間3月23日半夜地震搖到驚醒的我，想到可以結合地震API和網課使用的Leaflet圖像化資料。這就是地震地圖的誕生。
+        </li>
+      </ul>
     </main>
   );
 };
