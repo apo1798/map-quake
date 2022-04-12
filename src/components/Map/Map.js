@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { DataContext } from '../../store/DataContext';
+import React, { useState, useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { coordsActions } from '../../store/coords-slice';
 
 import MapLoading from './MapLoading';
 import MapContent from './MapContent';
@@ -9,7 +11,8 @@ import MapContent from './MapContent';
 const Map = () => {
   const [userLat, setUserLat] = useState('');
   const [userLng, setUserLng] = useState('');
-  const { setCoordsLat, setCoordsLng } = useContext(DataContext);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (navigator.geolocation) {
@@ -19,19 +22,19 @@ const Map = () => {
           const lng = pos.coords.longitude.toFixed(4);
           setUserLat(+lat);
           setUserLng(+lng);
-          setCoordsLat(+lat);
-          setCoordsLng(+lng);
+          dispatch(coordsActions.changeLat(+lat));
+          dispatch(coordsActions.changeLng(+lng));
         },
         () => {
           alert("系統自動定位在(25°N, 121°50'E)");
           setUserLat(25);
           setUserLng(121.5);
-          setCoordsLat(25);
-          setCoordsLng(121.5);
+          dispatch(coordsActions.changeLat(25));
+          dispatch(coordsActions.changeLng(121.5));
         }
       );
     }
-  }, [setCoordsLat, setCoordsLng]);
+  }, [dispatch]);
 
   return (
     <>

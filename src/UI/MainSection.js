@@ -4,13 +4,9 @@ import Map from '../components/Map/Map';
 import Settings from '../components/Setting/Settings';
 import Info from '../components/Info/Info';
 
-import { EarthquakeHttp } from '../http-request/EarthquakeHttp';
-
 import styles from './MainSection.module.css';
 
 const MainSection = () => {
-  EarthquakeHttp();
-
   return (
     <>
       <main className={styles['main-container']}>

@@ -1,14 +1,18 @@
 import React from 'react';
 
 import Header from '../components/Header/Header';
-import MainContainer from '../UI/MainContainer';
+import MainContainer from '../UI/CenterContainer';
+
+import Error from '../components/Error/Error';
 
 const ErrorPage = () => {
   return (
-    <MainContainer>
+    <>
       <Header />
-      <div>404! PAGE NOT FOUND :(</div>
-    </MainContainer>
+      <MainContainer>
+        <Error />
+      </MainContainer>
+    </>
   );
 };
 

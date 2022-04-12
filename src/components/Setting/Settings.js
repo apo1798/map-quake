@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
+
 import DateSetting from './DateSetting';
 import Coords from './Coords';
 import MagSetting from './MagSetting';
@@ -6,10 +8,8 @@ import MagSetting from './MagSetting';
 import styles from './Settings.module.css';
 import CircleNotch from '../../UI/CircleNotch';
 
-import { DataContext } from '../../store/DataContext';
-
 const Settings = () => {
-  const { isLoading } = useContext(DataContext);
+  const isLoading = useSelector((state) => state.app.isLoading);
 
   return (
     <section className={styles.container}>

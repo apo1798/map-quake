@@ -1,21 +1,16 @@
-import React, { useContext } from 'react';
-import { DataContext } from '../../store/DataContext';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { MapContainer, TileLayer } from 'react-leaflet';
 
-// import SetBoundsRectangles from './SetBoundsRectangles';
 import MapEarthquakeMarkers from './MapEarthquakeMarkers';
 import MapUserCoordsMarker from './MapUserCoordsMarker';
 import MapCenter from './MapCenter';
 
-// const position = [51.505, -0.09];
-// const bounds = [
-//   [51.49, -0.08],
-//   [51.5, -0.06],
-// ];
-
 const MapContent = (props) => {
-  const { earthquakeArray, coordsLat, coordsLng } = useContext(DataContext);
+  const earthquakeArray = useSelector((state) => state.app.earthquakeArray);
+  const coordsLat = useSelector((state) => state.coords.lat);
+  const coordsLng = useSelector((state) => state.coords.lng);
 
   return (
     <MapContainer

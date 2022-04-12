@@ -1,5 +1,7 @@
-import { useContext, useEffect } from 'react';
-import { DataContext } from '../store/DataContext';
+import { useEffect } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { appActions } from '../store/app-slice';
 
 const featureProcessor = (feature) => {
   return {
@@ -22,22 +24,19 @@ const featureProcessor = (feature) => {
 };
 
 export const EarthquakeHttp = () => {
-  const {
-    fromDate,
-    toDate,
-    setEarthquakeArray,
-    mag,
-    setIsLoading,
-    setHttpError,
-  } = useContext(DataContext);
+  const fromDate = useSelector((state) => state.date.fromDate);
+  const toDate = useSelector((state) => state.date.toDate);
+  const mag = useSelector((state) => state.mag.magnitude);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setIsLoading(true);
+    dispatch(appActions.changeHttpError(null));
+    dispatch(appActions.changeIsLoading(true));
+
     fetch(
       `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${fromDate}&endtime=${toDate}&minmagnitude=${mag}`
     )
       .then((response) => {
-        console.log(response);
         if (!response.ok)
           throw new Error('Failed to connect to the data base...');
 
@@ -47,17 +46,19 @@ export const EarthquakeHttp = () => {
         const earthquakeArray = [...data.features].map((feature) =>
           featureProcessor(feature)
         );
-        setEarthquakeArray(earthquakeArray);
-        setIsLoading(false);
-        setHttpError(null);
+        dispatch(appActions.changeEarthquakeArray(earthquakeArray));
+        dispatch(appActions.changeIsLoading(false));
+        dispatch(appActions.changeHttpError(null));
       })
       .catch((error) => {
-        setIsLoading(false);
-        setHttpError(
-          '伺服器回應錯誤。通常是資料數量過多。試著減少時間軸度、亦或增加震度再試一次。'
+        dispatch(appActions.changeIsLoading(false));
+        dispatch(
+          appActions.changeHttpError(
+            '伺服器回應錯誤。通常是資料數量過多。試著減少時間軸度、亦或增加震度再試一次。'
+          )
         );
       });
-  }, [fromDate, toDate, setEarthquakeArray, setIsLoading, mag, setHttpError]);
+  }, [fromDate, toDate, mag, dispatch]);
 };
 
 // export default EarthquakeHttp;

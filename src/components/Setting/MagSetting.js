@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
+import React, { memo } from 'react';
 
-import { DataContext } from '../../store/DataContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { magActions } from '../../store/mag-slice';
 
 import styles from './MagSetting.module.css';
 import { Faders } from 'phosphor-react';
 
-const Coords = () => {
-  const { mag, setMag } = useContext(DataContext);
+const Coords = memo(() => {
+  const mag = useSelector((state) => state.mag.magnitude);
+  const dispatch = useDispatch();
 
   const magChangeHandler = (event) => {
-    setMag(event.target.value);
-    console.log(event.target.value);
+    dispatch(magActions.changeMag(event.target.value));
   };
 
   return (
@@ -22,9 +23,7 @@ const Coords = () => {
       <div className={styles['mag-input']}>
         <label htmlFor='mag'>最小震度</label>
         <select type='number' onChange={magChangeHandler} value={mag} id='mag'>
-          <option value='3' selected>
-            3
-          </option>
+          <option value='3'>3</option>
           <option value='4'>4</option>
           <option value='5'>5</option>
           <option value='6'>6</option>
@@ -32,6 +31,6 @@ const Coords = () => {
       </div>
     </>
   );
-};
+});
 
 export default Coords;

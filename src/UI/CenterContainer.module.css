@@ -1,7 +1,7 @@
 .main-container {
   height: var(--main-container);
-  max-width: 100%;
-  margin: auto 5rem;
+  max-width: 114rem;
+  margin: auto;
 
   background-color: rgb(77, 77, 77);
   color: #fdfdfd;
@@ -9,6 +9,8 @@
   overflow: hidden;
   border-radius: 1rem;
   transform: translateZ(0);
+  display: flex;
+  align-items: center;
 }
 
 /* .map-container {

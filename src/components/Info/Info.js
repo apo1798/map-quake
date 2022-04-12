@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
-import { DataContext } from '../../store/DataContext';
+import React from 'react';
+
+import { useSelector } from 'react-redux';
 
 // import { ReactComponent as Robot } from '../../icons/robot.svg';
 import styles from './Info.module.css';
 import { Robot } from 'phosphor-react';
 
 const Info = () => {
-  const { earthquakeArray, httpError } = useContext(DataContext);
+  const earthquakeArray = useSelector((state) => state.app.earthquakeArray);
+  const httpError = useSelector((state) => state.app.httpError);
 
   const earthquakeCount = earthquakeArray.length;
 

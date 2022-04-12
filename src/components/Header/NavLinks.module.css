@@ -21,18 +21,6 @@
 
 @media (max-width: 39em) {
   .header-list {
-    gap: 1rem;
-  }
-}
-
-/* 432px */
-@media (max-width: 30em) {
-  .header-list {
-    gap: 0.5rem;
-  }
-
-  .link:link,
-  .link:visited {
-    font-size: 1.5rem;
+    display: none;
   }
 }

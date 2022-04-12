@@ -1,21 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { DataContext } from '../../store/DataContext';
+import { useSelector, useDispatch } from 'react-redux';
+import { coordsActions } from '../../store/coords-slice';
 
 import styles from './Coords.module.css';
 import { PersonSimpleWalk } from 'phosphor-react';
 
 const Coords = () => {
-  const { coordsLat, coordsLng, setCoordsLat, setCoordsLng } =
-    useContext(DataContext);
+  const coordsLat = useSelector((state) => state.coords.lat);
+  const coordsLng = useSelector((state) => state.coords.lng);
+  const dispatch = useDispatch();
 
   const latChangeHandler = (event) => {
     if (+event.target.value > 90 || +event.target.value < -90) return;
-    setCoordsLat(event.target.value);
+    dispatch(coordsActions.changeLat(+event.target.value));
   };
   const lngChangeHandler = (event) => {
     if (+event.target.value > 180 || +event.target.value < -180) return;
-    setCoordsLng(event.target.value);
+    dispatch(coordsActions.changeLng(+event.target.value));
   };
 
   return (

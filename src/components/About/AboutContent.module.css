@@ -1,9 +1,10 @@
 .text-container {
-  margin: auto;
-  padding: 8rem 4rem;
+  max-height: 90%;
+  padding: 2.5rem 5rem;
   font-size: 2rem;
-  width: fit-content;
-  height: inherit;
+  max-width: 114rem;
+
+  overflow-y: auto;
 }
 
 .list {
@@ -29,28 +30,4 @@
 .link:active {
   color: #fa8e00;
   transform: translateY(-0.5px);
-}
-
-@media (max-width: 54em) {
-  .text-container {
-    padding: 4rem 4rem;
-  }
-}
-
-@media (max-width: 39em) {
-  .text-container {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 30em) {
-  .text-container {
-    padding: 4rem 3rem;
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 30em) and (max-height: 43em) {
-  .text-container {
-    padding: 4rem 3rem;
-    font-size: 1.6rem;
-  }
 }

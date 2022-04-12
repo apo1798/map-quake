@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { DataContext } from '../../store/DataContext';
-// import { ReactComponent as Calendar } from '../../icons/calendar.svg';
+import React from 'react';
 
-import { Calendar } from 'phosphor-react';
+import { useSelector, useDispatch } from 'react-redux';
+import { dateActions } from '../../store/date-slice';
 
 import styles from './DateSetting.module.css';
+import { Calendar } from 'phosphor-react';
 
 const dateValidChecker = (toDate, fromDate) => {
   const timeGap = new Date(toDate) - new Date(fromDate);
@@ -15,13 +15,15 @@ const dateValidChecker = (toDate, fromDate) => {
 const today = new Date().toISOString().split('T')[0];
 
 const DateSetting = () => {
-  const { toDate, setToDate, fromDate, setFromDate } = useContext(DataContext);
+  const toDate = useSelector((state) => state.date.toDate);
+  const fromDate = useSelector((state) => state.date.fromDate);
+  const dispatch = useDispatch();
 
   const fromDateHandler = (event) => {
-    setFromDate(event.target.value);
+    dispatch(dateActions.changeFromDate(event.target.value));
   };
   const toDateHandler = (event) => {
-    setToDate(event.target.value);
+    dispatch(dateActions.changeToDate(event.target.value));
   };
 
   const dateErrorMessage = dateValidChecker(toDate, fromDate);

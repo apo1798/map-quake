@@ -6,6 +6,14 @@ const AboutContent = () => {
   return (
     <main className={styles['text-container']}>
       <ul className={styles.list}>
+        <h2>地震地圖</h2>
+        <li>
+          結合地震 API 和 Leaflet、OpenStreet
+          Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。
+        </li>
+      </ul>
+
+      <ul className={styles.list}>
         <h2>技術介紹</h2>
         <li>
           <h3>1. 地震API</h3>
@@ -51,7 +59,7 @@ const AboutContent = () => {
           <h3>2. 資料數量限制</h3>
           <div>
             根據其文件，事件數量限制為20,000筆。若搜尋範圍太大將會被視為「400
-            Bad Request」。
+            Bad Request」。可以試著減少時間軸度、亦或增加震度再試一次。
           </div>
         </li>
       </ul>

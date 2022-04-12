@@ -1,0 +1,11 @@
+.navbar > ul {
+  display: flex;
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+
+@media (max-width: 39em) {
+  .navbar {
+    display: none;
+  }
+}
