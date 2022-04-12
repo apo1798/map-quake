@@ -1,6 +1,5 @@
 import { useMap, Popup, Marker } from 'react-leaflet';
-
-const L = require('leaflet');
+import L from 'leaflet';
 
 const myIcon = L.icon({
   iconUrl: require('../../icons/person-simple-walk.png'),

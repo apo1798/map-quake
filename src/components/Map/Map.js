@@ -6,8 +6,6 @@ import { coordsActions } from '../../store/coords-slice';
 import MapLoading from './MapLoading';
 import MapContent from './MapContent';
 
-// import styles from './Map.module.css';
-
 const Map = () => {
   const [userLat, setUserLat] = useState('');
   const [userLng, setUserLng] = useState('');

@@ -19,16 +19,6 @@ code {
     monospace;
 }
 
-/* :root {
-  --bg: #242526;
-  --bg-accent: #484a4d;
-  --text-color: #dadce1;
-  --nav-size: 60px;
-  --border: 1px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 500ms;
-} */
-
 :root {
   --main-container: 90vh;
   --input-width: 13rem;
