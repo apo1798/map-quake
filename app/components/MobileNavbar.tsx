@@ -2,26 +2,19 @@
 
 import { navItems } from '@/app/components/Header';
 import HeaderLink from '@/app/components/HeaderLink';
+import useResize from '@/src/hooks/useResize';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const MobileNavbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
-  useEffect(() => {
-    const closeNav = () => {
-      if (window.innerWidth < 640 || navOpen === false) return;
-      setNavOpen(false);
-    };
-
-    window.addEventListener('resize', closeNav);
-    return () => {
-      window.removeEventListener('resize', closeNav);
-    };
-  }, [navOpen]);
+  useResize(() => {
+    setNavOpen(false);
+  }, navOpen);
 
   const baseHamburgerLineStyle =
-    'absolute inset-x-1 h-0.5 rounded bg-gray-800 origin-left transition-all';
+    'absolute inset-x-1 h-0.5 rounded bg-gray-800 origin-left transition-all dark:bg-white';
 
   return (
     <>
@@ -50,9 +43,11 @@ const MobileNavbar = () => {
       </button>
 
       <nav
-        className={`absolute left-0 right-0 top-full z-[1001] grid origin-top bg-gray-300 shadow transition-all duration-500 ${
-          navOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-        }`}
+        className={clsx(
+          'dark absolute left-0 right-0 top-full z-[1001] grid origin-top bg-gray-300 shadow-xl transition-all duration-500 dark:bg-zinc-600',
+          navOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+          navOpen ? 'border-b border-solid border-white' : ''
+        )}
       >
         <ul className='space-y-3 overflow-hidden pl-4'>
           {navItems.map((item) => (
@@ -65,6 +60,9 @@ const MobileNavbar = () => {
                 text={item.text}
                 display='block'
                 underline={false}
+                onClick={() => {
+                  setNavOpen(false);
+                }}
               />
             </li>
           ))}

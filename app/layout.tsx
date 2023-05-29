@@ -1,22 +1,25 @@
-import Link from 'next/link';
 import './globals.css';
 import Header from '@/app/components/Header';
 import Script from 'next/script';
-
-{
-  /* <meta
-name='description'
-content='地震地圖。結合地震API和Leaflet、OpenStreet Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。'
-/>
-<meta name='theme-color' content='#4d4d4d' />
-<meta name='keywords' content='地震、地圖、圖像化' /> */
-}
 
 export const metadata = {
   title: 'MapQuake 地震地圖 | 圖像化世界的地震',
   description:
     '地震地圖。結合地震API和Leaflet、OpenStreet Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。',
   keywords: '地震、地圖、圖像化',
+  openGraph: {
+    type: 'website',
+    url: 'https://example.com',
+    title: 'MapQuake 地震地圖 | 圖像化世界的地震',
+    description:
+      '地震地圖。結合地震API和Leaflet、OpenStreet Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。',
+    siteName: 'MapQuake 地震地圖',
+    images: [
+      {
+        url: 'https://github.com/apo1798/map-quake/raw/main/og_display.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +42,7 @@ export default function RootLayout({
           crossOrigin=''
         ></Script>
       </head>
-      <body className='flex min-h-[100svh] flex-col'>
+      <body className='dark:bg-zinc-600'>
         <Header />
         {children}
       </body>

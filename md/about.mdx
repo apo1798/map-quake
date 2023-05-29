@@ -1,0 +1,22 @@
+## 地震地圖
+
+結合地震 API 和 Leaflet、OpenStreet Map，圖像化全世界的地震，調整日期與震度客製化你想要的地震資料。
+
+### 使用資料與套件
+
+1. 前端框架：Next.js 13 app router
+2. 地震 API：本地震資料源自[美國地質調查局(United States Geological Survey)](https://earthquake.usgs.gov/fdsnws/event/1/)
+3. 地圖套件：使用 [React Leaflet](https://react-leaflet.js.org/)、[Leaflet](https://leafletjs.com/)、[Open StreetMap](https://www.openstreetmap.org)。生成地震標誌。並依照震度具不同的視覺呈現
+4. 表單、驗證套件：[React Hook Form](https://www.react-hook-form.com/)、[Zod](https://zod.dev)
+5. API 資料管理：[TanStack Query](https://tanstack.com/query/latest)、[axios](https://github.com/axios/axios)
+6. 狀態管理：[Jotai](https://jotai.org/)
+7. CSS 套件： [TailwindCSS](https://tailwindcss.com/)、[HeadlessUI](https://headlessui.com/)、[clsx](https://github.com/lukeed/clsx)
+
+### 使用說明
+
+1. 時間：本地圖顯示時間均為協調世界時(Universal Time Coordinated)，簡稱 UTC。
+2. 資料數量限制：根據 USGS API 提示，事件數量限制為 20,000 筆。若搜尋範圍太大將會被視為「400 Bad Request」。可以試著減少時間軸度、亦或增加震度再試一次。
+
+### 緣由
+
+被台灣時間 2022/3/23 半夜地震搖到驚醒的我，想到可以結合地震 API 和網課使用的 Leaflet 圖像化資料。這就是地震地圖的誕生。
