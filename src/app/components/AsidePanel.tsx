@@ -1,6 +1,6 @@
-import MapSettingForm from '@/app/components/MapSettingForm';
-import MapSettingModal from '@/app/components/MapSettingModal';
-import QuakeData from '@/app/components/QuakeData';
+import MapSettingForm from '@/src/app/components/MapSettingForm';
+import MapSettingModal from '@/src/app/components/MapSettingModal';
+import QuakeData from '@/src/app/components/QuakeData';
 
 const AsidePanel = () => {
   return (

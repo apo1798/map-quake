@@ -1,6 +1,7 @@
 import './globals.css';
-import Header from '@/app/components/Header';
+import Header from '@/src/app/components/Header';
 import Script from 'next/script';
+import { ReactNode } from 'react';
 
 export const metadata = {
   title: 'MapQuake 地震地圖 | 圖像化世界的地震',
@@ -24,8 +25,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
+  modal: ReactNode;
 }) {
   return (
     <html lang='zh-TW'>
@@ -41,10 +44,24 @@ export default function RootLayout({
           integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo='
           crossOrigin=''
         ></Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        try {
+          if (localStorage.darkMode === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+          } else {
+            document.documentElement.classList.remove('dark')
+          }
+        } catch (_) {}
+      `,
+          }}
+        />
       </head>
       <body className='dark:bg-zinc-600'>
         <Header />
         {children}
+        {modal}
       </body>
     </html>
   );

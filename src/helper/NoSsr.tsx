@@ -5,5 +5,5 @@ const NoSsr = ({ children }: { children: ReactNode }) => <>{children}</>;
 
 export default dynamic(() => Promise.resolve(NoSsr), {
   ssr: false,
-  loading: () => <p>Loading...</p>,
+  loading: () => null,
 });

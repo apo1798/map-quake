@@ -1,7 +1,7 @@
 'use client';
 
-import { navItems } from '@/app/components/Header';
-import HeaderLink from '@/app/components/HeaderLink';
+import { navItems } from '@/src/app/components/Header';
+import HeaderLink from '@/src/app/components/HeaderLink';
 import useResize from '@/src/hooks/useResize';
 import clsx from 'clsx';
 import { useState } from 'react';

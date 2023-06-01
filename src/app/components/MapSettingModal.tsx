@@ -1,6 +1,6 @@
 'use client';
 
-import MapSettingForm from '@/app/components/MapSettingForm';
+import MapSettingForm from '@/src/app/components/MapSettingForm';
 import { settingAtom } from '@/src/atom';
 import Button from '@/src/components/ui/Button';
 import useResize from '@/src/hooks/useResize';

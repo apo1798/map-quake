@@ -16,7 +16,6 @@ const GetLocationButton = () => {
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(position);
         const { latitude, longitude } = position.coords;
         setSettings((state) => ({
           ...state,
@@ -25,7 +24,6 @@ const GetLocationButton = () => {
         setIsLoading(false);
       },
       (err) => {
-        console.log(err);
         setSettings((state) => ({
           ...state,
           userLocation: [25.04, 121.511944],

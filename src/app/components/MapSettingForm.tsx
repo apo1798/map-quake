@@ -16,7 +16,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import LoadingSpinner from '@/src/components/ui/LoadingSpinner';
 import IconTooltip from '@/src/components/ui/IconTooltip';
-import GetLocationButton from '@/app/components/GetLocationButton';
+import GetLocationButton from '@/src/app/components/GetLocationButton';
 import useEarthquakeQuery from '@/src/hooks/useEarthquakeQuery';
 
 const now = new Date();

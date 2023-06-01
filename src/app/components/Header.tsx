@@ -1,6 +1,7 @@
-import HeaderLink from '@/app/components/HeaderLink';
-import MobileNavbar from '@/app/components/MobileNavbar';
-import ToggleDarkModeButton from '@/app/components/ToggleDarkModeButton';
+import HeaderLink from '@/src/app/components/HeaderLink';
+import MobileNavbar from '@/src/app/components/MobileNavbar';
+import ToggleDarkModeButton from '@/src/app/components/ToggleDarkModeButton';
+import NoSsr from '@/src/helper/NoSsr';
 import Link from 'next/link';
 import { FaRegMap } from 'react-icons/fa';
 
@@ -28,7 +29,9 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <ToggleDarkModeButton />
+          <NoSsr>
+            <ToggleDarkModeButton />
+          </NoSsr>
           <MobileNavbar />
         </div>
       </header>

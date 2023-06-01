@@ -4,7 +4,6 @@ const useResize = (cb: Function, extraCondition = true, intentSize = 640) => {
   useEffect(() => {
     const resizeFunction = () => {
       if (window.innerWidth > intentSize && extraCondition) {
-        console.log('cb');
         cb();
       }
     };

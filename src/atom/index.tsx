@@ -17,7 +17,7 @@ const isPreferDarkMode =
 
 // initial value
 const now = new Date();
-const initalFormValue = {
+export const initialFormValue = {
   startAt: dateObjectToDateString(subtractMonths(now, 3)),
   endAt: dateObjectToDateString(now),
   magnitude: '3',
@@ -30,6 +30,6 @@ const initalFormValue = {
 };
 
 // atom instances
-export const settingAtom = atom<typeof initalFormValue>(initalFormValue);
+export const settingAtom = atom<typeof initialFormValue>(initialFormValue);
 
 export const darkModeAtom = atomWithStorage('darkMode', isPreferDarkMode);

@@ -1,7 +1,9 @@
 import useEarthquakeQuery from '@/src/hooks/useEarthquakeQuery';
-import { CircleMarker, Tooltip } from 'react-leaflet';
+import { useRouter } from 'next/navigation';
+import { CircleMarker, Pane, Tooltip } from 'react-leaflet';
 
 const QuakeCircle = () => {
+  const router = useRouter();
   const { data, isLoading, isError } = useEarthquakeQuery();
 
   if (isLoading || isError) return null;
@@ -30,6 +32,11 @@ const QuakeCircle = () => {
             color={markerStyle.color}
             fillOpacity={markerStyle.opacity}
             weight={markerStyle.weight}
+            eventHandlers={{
+              click: () => {
+                router.push(`/quake/${id}`);
+              },
+            }}
           >
             <Tooltip sticky={true} interactive={true}>
               <ul className='flex flex-col'>
@@ -40,6 +47,7 @@ const QuakeCircle = () => {
                 <li>座標：{`${lat}, ${lng}`}</li>
                 <li>時間：{new Date(time).toLocaleString()}</li>
               </ul>
+              <p className='text-end text-amber-600'>點擊圓圈查看詳細資料</p>
             </Tooltip>
           </CircleMarker>
         );

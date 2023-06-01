@@ -3,6 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import QuakeCircle from '@/src/components/leaflet/QuakeCircle';
 import UserLocation from '@/src/components/leaflet/UserLocation';
 
+
 const LeafletMap = memo(() => {
   return (
     <section className='w-full grow bg-gray-200'>

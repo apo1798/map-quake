@@ -1,4 +1,4 @@
-import { getEarthquake } from '@/src/api/earthquake';
+import { EarthquakeData, getEarthquake } from '@/src/api/earthquake';
 import { settingAtom } from '@/src/atom';
 import { useQuery } from '@tanstack/react-query';
 import { useAtomValue } from 'jotai';
