@@ -42,7 +42,6 @@ const page = ({ params }: Props) => {
               leaveTo='opacity-0 scale-95'
             >
               <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded bg-zinc-600 px-6 py-4 text-left align-middle text-white shadow-md shadow-gray-700  transition-all'>
-                {/* @ts-expect-error */}
                 <QuakePage params={params} />
               </Dialog.Panel>
             </Transition.Child>

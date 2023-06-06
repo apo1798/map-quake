@@ -31,7 +31,7 @@ export default function RootLayout({
   modal: ReactNode;
 }) {
   return (
-    <html lang='zh-TW'>
+    <html lang='zh-TW' suppressHydrationWarning>
       <head>
         <link
           rel='stylesheet'

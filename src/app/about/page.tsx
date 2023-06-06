@@ -16,7 +16,6 @@ const AboutPage = async () => {
           return (
             <>
               <div key={file.fileName}>
-                {/* @ts-expect-error */}
                 <MDXRemote
                   source={file.content}
                   components={{
