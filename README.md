@@ -1,6 +1,6 @@
 # MapQuake 地震地圖
 
-#### [網站連結](https://apo1798.github.io/map-quake/)
+## [網站連結](https://map-quake.vercel.app/)
 
 #### [v1 網站連結](https://apo1798.github.io/map-quake/)
 
